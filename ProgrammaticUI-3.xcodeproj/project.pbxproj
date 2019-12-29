@@ -12,6 +12,8 @@
 		9DAB5F5C23B8AE3A00B37322 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB5F5B23B8AE3A00B37322 /* FirstVC.swift */; };
 		9DAB5F6123B8AE3C00B37322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB5F6023B8AE3C00B37322 /* Assets.xcassets */; };
 		9DAB5F6423B8AE3C00B37322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB5F6223B8AE3C00B37322 /* LaunchScreen.storyboard */; };
+		9DAB5F6C23B8E36000B37322 /* BaseCollectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB5F6B23B8E36000B37322 /* BaseCollectionPage.swift */; };
+		9DAB5F6E23B8E45C00B37322 /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB5F6D23B8E45C00B37322 /* BaseCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9DAB5F6023B8AE3C00B37322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DAB5F6323B8AE3C00B37322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DAB5F6523B8AE3C00B37322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DAB5F6B23B8E36000B37322 /* BaseCollectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionPage.swift; sourceTree = "<group>"; };
+		9DAB5F6D23B8E45C00B37322 /* BaseCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				9DAB5F6023B8AE3C00B37322 /* Assets.xcassets */,
 				9DAB5F6223B8AE3C00B37322 /* LaunchScreen.storyboard */,
 				9DAB5F6523B8AE3C00B37322 /* Info.plist */,
+				9DAB5F6B23B8E36000B37322 /* BaseCollectionPage.swift */,
+				9DAB5F6D23B8E45C00B37322 /* BaseCollectionCell.swift */,
 			);
 			path = "ProgrammaticUI-3";
 			sourceTree = "<group>";
@@ -134,9 +140,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DAB5F6E23B8E45C00B37322 /* BaseCollectionCell.swift in Sources */,
 				9DAB5F5C23B8AE3A00B37322 /* FirstVC.swift in Sources */,
 				9DAB5F5823B8AE3A00B37322 /* AppDelegate.swift in Sources */,
 				9DAB5F5A23B8AE3A00B37322 /* SceneDelegate.swift in Sources */,
+				9DAB5F6C23B8E36000B37322 /* BaseCollectionPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
