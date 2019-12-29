@@ -34,6 +34,39 @@ class FirstVC: UIViewController {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         return containerView
     }()
+    
+    let bottomStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fillEqually
+        stackView.backgroundColor = UIColor.blue
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    let nextButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("NEXT", for: .normal)
+        button.tintColor = UIColor.gray
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let previousButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("PREV", for: .normal)
+        button.tintColor = UIColor.gray
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = 4
+        pageControl.currentPageIndicatorTintColor = UIColor.red
+        pageControl.pageIndicatorTintColor = UIColor.gray
+        return pageControl
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +74,10 @@ class FirstVC: UIViewController {
         view.backgroundColor = UIColor.white
         view.addSubview(topContainerView)
         view.addSubview(descriptionTextView)
+        view.addSubview(bottomStackView)
+        bottomStackView.addArrangedSubview(previousButton)
+        bottomStackView.addArrangedSubview(pageControl)
+        bottomStackView.addArrangedSubview(nextButton)
         setupUI()
         
     }
@@ -48,10 +85,10 @@ class FirstVC: UIViewController {
     private func setupUI(){
         
         // Container View
-        topContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0).isActive = true
-        topContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true
-        topContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0).isActive = true
-        topContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+        topContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0.0).isActive = true
+        topContainerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0).isActive = true
+        topContainerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0.0).isActive = true
+        topContainerView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5).isActive = true
         topContainerView.addSubview(topImageView)
         
         // ImageView
@@ -61,11 +98,18 @@ class FirstVC: UIViewController {
         topImageView.widthAnchor.constraint(equalTo: topImageView.heightAnchor, multiplier: 1.0).isActive = true
         
         // Description Text View
-        descriptionTextView.topAnchor.constraint(equalTo: topImageView.bottomAnchor, constant: 100.0).isActive = true
-        descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0).isActive = true
-        descriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true
-        descriptionTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0).isActive = true
+        descriptionTextView.topAnchor.constraint(equalTo: topImageView.bottomAnchor, constant: 75.0).isActive = true
+        descriptionTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0).isActive = true
+        descriptionTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0).isActive = true
+        descriptionTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0.0).isActive = true
         
+        // Bottom Stack View
+        NSLayoutConstraint.activate([
+            bottomStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0.0),
+            bottomStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0),
+            bottomStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 50.0)
+        ])
     }
 
 
