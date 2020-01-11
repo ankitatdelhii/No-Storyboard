@@ -10,6 +10,41 @@ import UIKit
 
 class BaseCollectionPage: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    // Bottom
+    let bottomStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fillEqually
+        stackView.backgroundColor = UIColor.blue
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    let nextButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("NEXT", for: .normal)
+        button.tintColor = UIColor.gray
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let previousButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("PREV", for: .normal)
+        button.tintColor = UIColor.gray
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = pages.count
+        pageControl.currentPageIndicatorTintColor = UIColor.red
+        pageControl.pageIndicatorTintColor = UIColor.gray
+        return pageControl
+    }()
+
+    
     let mainCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -28,7 +63,39 @@ class BaseCollectionPage: UIViewController, UICollectionViewDataSource, UICollec
         mainCollection.delegate = self
         mainCollection.dataSource = self
         view.addSubview(mainCollection)
+        view.addSubview(bottomStackView)
+        bottomStackView.addArrangedSubview(previousButton)
+        bottomStackView.addArrangedSubview(pageControl)
+        bottomStackView.addArrangedSubview(nextButton)
         setupUI()
+        
+        // nextButton
+        nextButton.addTarget(self, action: #selector(nextBtnPressed), for: .touchUpInside)
+        previousButton.addTarget(self, action: #selector(prevBtnPressed), for: .touchUpInside)
+    }
+    
+    @objc func nextBtnPressed() {
+        let nextIndex = pageControl.currentPage + 1
+        if nextIndex < pages.count {
+            pageControl.currentPage = nextIndex
+            let index = IndexPath(item: nextIndex, section: 0)
+            mainCollection.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    @objc func prevBtnPressed(){
+        let prevIndex = pageControl.currentPage - 1
+        if prevIndex >= 0 {
+            pageControl.currentPage = prevIndex
+            let index = IndexPath(item: prevIndex, section: 0)
+            mainCollection.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let x = targetContentOffset.pointee.x
+        print(x, view.frame.width, x/view.frame.width)
+        pageControl.currentPage = Int(x/view.frame.width)
     }
     
     func setupUI(){
@@ -36,6 +103,14 @@ class BaseCollectionPage: UIViewController, UICollectionViewDataSource, UICollec
         mainCollection.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0.0).isActive = true
         mainCollection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0).isActive = true
         mainCollection.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0).isActive = true
+        
+        // Bottom Stack View
+        NSLayoutConstraint.activate([
+            bottomStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0.0),
+            bottomStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0),
+            bottomStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 50.0)
+        ])
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

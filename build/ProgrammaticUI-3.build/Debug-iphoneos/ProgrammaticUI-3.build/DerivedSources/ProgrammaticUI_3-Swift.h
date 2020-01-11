@@ -222,6 +222,7 @@ SWIFT_CLASS("_TtC16ProgrammaticUI_318BaseCollectionCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIScrollView;
 @class UICollectionView;
 @class UICollectionViewLayout;
 @class NSBundle;
@@ -229,6 +230,9 @@ SWIFT_CLASS("_TtC16ProgrammaticUI_318BaseCollectionCell")
 SWIFT_CLASS("_TtC16ProgrammaticUI_318BaseCollectionPage")
 @interface BaseCollectionPage : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 - (void)viewDidLoad;
+- (void)nextBtnPressed;
+- (void)prevBtnPressed;
+- (void)scrollViewWillEndDragging:(UIScrollView * _Nonnull)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(CGPoint * _Nonnull)targetContentOffset;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;

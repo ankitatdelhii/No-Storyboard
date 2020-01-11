@@ -46,48 +46,14 @@ class BaseCollectionCell: UICollectionViewCell {
         return containerView
     }()
     
-    let bottomStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.distribution = .fillEqually
-        stackView.backgroundColor = UIColor.blue
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
     
-    let nextButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("NEXT", for: .normal)
-        button.tintColor = UIColor.gray
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    let previousButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("PREV", for: .normal)
-        button.tintColor = UIColor.gray
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    let pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.currentPage = 0
-        pageControl.numberOfPages = 4
-        pageControl.currentPageIndicatorTintColor = UIColor.red
-        pageControl.pageIndicatorTintColor = UIColor.gray
-        return pageControl
-    }()
-    
+    // Bottom
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.white
         addSubview(topContainerView)
         addSubview(descriptionTextView)
-        addSubview(bottomStackView)
-        bottomStackView.addArrangedSubview(previousButton)
-        bottomStackView.addArrangedSubview(pageControl)
-        bottomStackView.addArrangedSubview(nextButton)
         setupUI()
     }
     
@@ -117,12 +83,6 @@ class BaseCollectionCell: UICollectionViewCell {
         descriptionTextView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0.0).isActive = true
         descriptionTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0.0).isActive = true
         
-        // Bottom Stack View
-        NSLayoutConstraint.activate([
-            bottomStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0.0),
-            bottomStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0.0),
-            bottomStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0.0),
-            bottomStackView.heightAnchor.constraint(equalToConstant: 50.0)
-        ])
+        
     }
 }
