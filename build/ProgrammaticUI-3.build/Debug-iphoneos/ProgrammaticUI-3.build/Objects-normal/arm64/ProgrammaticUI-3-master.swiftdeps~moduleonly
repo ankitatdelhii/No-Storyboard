@@ -1,9 +1,10 @@
 version: "Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
 options: "0013605976238a374768051800a9956d"
-build_time: [1577628960, 920948000]
+build_time: [1578769259, 839600000]
 inputs:
-  "/Users/ankitatdelhii/Desktop/ios/ProgrammaticUI-3/ProgrammaticUI-3/BaseCollectionCell.swift": [1577628667, 327582466]
+  "/Users/ankitatdelhii/Desktop/ios/ProgrammaticUI-3/ProgrammaticUI-3/BaseCollectionCell.swift": [1578769185, 907720019]
   "/Users/ankitatdelhii/Desktop/ios/ProgrammaticUI-3/ProgrammaticUI-3/FirstVC.swift": [1577623991, 876468369]
   "/Users/ankitatdelhii/Desktop/ios/ProgrammaticUI-3/ProgrammaticUI-3/AppDelegate.swift": [1577612986, 29693093]
   "/Users/ankitatdelhii/Desktop/ios/ProgrammaticUI-3/ProgrammaticUI-3/SceneDelegate.swift": [1577627092, 883555309]
-  "/Users/ankitatdelhii/Desktop/ios/ProgrammaticUI-3/ProgrammaticUI-3/BaseCollectionPage.swift": [1577628960, 787659193]
+  "/Users/ankitatdelhii/Desktop/ios/ProgrammaticUI-3/ProgrammaticUI-3/PageModel.swift": [1578767640, 321503417]
+  "/Users/ankitatdelhii/Desktop/ios/ProgrammaticUI-3/ProgrammaticUI-3/BaseCollectionPage.swift": [1578769255, 925516036]

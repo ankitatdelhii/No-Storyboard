@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D067C7F23CA4C7D0035FF8B /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D067C7E23CA4C7D0035FF8B /* PageModel.swift */; };
 		9DAB5F5823B8AE3A00B37322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB5F5723B8AE3A00B37322 /* AppDelegate.swift */; };
 		9DAB5F5A23B8AE3A00B37322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB5F5923B8AE3A00B37322 /* SceneDelegate.swift */; };
 		9DAB5F5C23B8AE3A00B37322 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB5F5B23B8AE3A00B37322 /* FirstVC.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D067C7E23CA4C7D0035FF8B /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		9DAB5F5423B8AE3A00B37322 /* ProgrammaticUI-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProgrammaticUI-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAB5F5723B8AE3A00B37322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DAB5F5923B8AE3A00B37322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				9DAB5F6523B8AE3C00B37322 /* Info.plist */,
 				9DAB5F6B23B8E36000B37322 /* BaseCollectionPage.swift */,
 				9DAB5F6D23B8E45C00B37322 /* BaseCollectionCell.swift */,
+				9D067C7E23CA4C7D0035FF8B /* PageModel.swift */,
 			);
 			path = "ProgrammaticUI-3";
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				9DAB5F5C23B8AE3A00B37322 /* FirstVC.swift in Sources */,
 				9DAB5F5823B8AE3A00B37322 /* AppDelegate.swift in Sources */,
 				9DAB5F5A23B8AE3A00B37322 /* SceneDelegate.swift in Sources */,
+				9D067C7F23CA4C7D0035FF8B /* PageModel.swift in Sources */,
 				9DAB5F6C23B8E36000B37322 /* BaseCollectionPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

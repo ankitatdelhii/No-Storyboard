@@ -20,8 +20,11 @@ class BaseCollectionPage: UIViewController, UICollectionViewDataSource, UICollec
         return collectionView
     }()
     
+    let pages = [Page(imageName: "t1", headerText: "Join us today in our fun and games!", description: "Are you ready for loads and loads of fun? Don't wait any longer! We hope to see you in our stores soon!"), Page(imageName: "t2", headerText: "Subscribe and Get Coupons on our daily events!", description: "Get notified of the savings immediately when we announce them on our website. Make sure to give us any feedback you have."), Page(imageName: "t3", headerText: "VIP Members Special Service!", description: "This is the dummy text to get you a VIP pass for all your dinner needs at various luxury restraunts around the world!")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         mainCollection.delegate = self
         mainCollection.dataSource = self
         view.addSubview(mainCollection)
@@ -29,20 +32,22 @@ class BaseCollectionPage: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func setupUI(){
-        mainCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0).isActive = true
-        mainCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0).isActive = true
-        mainCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0).isActive = true
-        mainCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true
+        mainCollection.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0.0).isActive = true
+        mainCollection.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0.0).isActive = true
+        mainCollection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0).isActive = true
+        mainCollection.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0).isActive = true
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! BaseCollectionCell
+        let page = pages[indexPath.row]
+        cell.page = page
 //        cell.backgroundColor = indexPath.row % 2 == 0 ? UIColor.green : UIColor.blue
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return pages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

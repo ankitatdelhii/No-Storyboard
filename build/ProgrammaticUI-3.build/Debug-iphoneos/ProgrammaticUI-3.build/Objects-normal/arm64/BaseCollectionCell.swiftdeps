@@ -17,6 +17,7 @@ depends-top-level:
 - "NSCoder"
 - !private "NSLayoutConstraint"
 - "NSMutableAttributedString"
+- "Page"
 - "StringLiteralType"
 - "UIButton"
 - "UICollectionViewCell"
@@ -35,6 +36,7 @@ depends-member:
 - ["16ProgrammaticUI_318BaseCollectionCellC", "NSCoder"]
 - !private ["16ProgrammaticUI_318BaseCollectionCellC", "NSLayoutConstraint"]
 - ["16ProgrammaticUI_318BaseCollectionCellC", "NSMutableAttributedString"]
+- ["16ProgrammaticUI_318BaseCollectionCellC", "Page"]
 - ["16ProgrammaticUI_318BaseCollectionCellC", "UIButton"]
 - ["16ProgrammaticUI_318BaseCollectionCellC", "UIColor"]
 - ["16ProgrammaticUI_318BaseCollectionCellC", "UIFont"]
@@ -52,6 +54,7 @@ depends-member:
 - !private ["16ProgrammaticUI_318BaseCollectionCellC", "fatalError"]
 - ["16ProgrammaticUI_318BaseCollectionCellC", "init"]
 - ["16ProgrammaticUI_318BaseCollectionCellC", "nextButton"]
+- ["16ProgrammaticUI_318BaseCollectionCellC", "page"]
 - ["16ProgrammaticUI_318BaseCollectionCellC", "pageControl"]
 - ["16ProgrammaticUI_318BaseCollectionCellC", "previousButton"]
 - !private ["16ProgrammaticUI_318BaseCollectionCellC", "safeAreaLayoutGuide"]
@@ -93,6 +96,7 @@ depends-member:
 - !private ["So15CALayerDelegateP", "leadingAnchor"]
 - !private ["So15CALayerDelegateP", "nextButton"]
 - ["So15CALayerDelegateP", "numberOfPages"]
+- !private ["So15CALayerDelegateP", "page"]
 - !private ["So15CALayerDelegateP", "pageControl"]
 - ["So15CALayerDelegateP", "pageIndicatorTintColor"]
 - !private ["So15CALayerDelegateP", "previousButton"]
@@ -149,6 +153,7 @@ depends-member:
 - !private ["s7CVarArgP", "leadingAnchor"]
 - !private ["s7CVarArgP", "nextButton"]
 - ["s7CVarArgP", "numberOfPages"]
+- !private ["s7CVarArgP", "page"]
 - !private ["s7CVarArgP", "pageControl"]
 - ["s7CVarArgP", "pageIndicatorTintColor"]
 - !private ["s7CVarArgP", "previousButton"]
@@ -208,6 +213,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "leadingAnchor"]
 - !private ["s28CustomDebugStringConvertibleP", "nextButton"]
 - ["s28CustomDebugStringConvertibleP", "numberOfPages"]
+- !private ["s28CustomDebugStringConvertibleP", "page"]
 - !private ["s28CustomDebugStringConvertibleP", "pageControl"]
 - ["s28CustomDebugStringConvertibleP", "pageIndicatorTintColor"]
 - !private ["s28CustomDebugStringConvertibleP", "previousButton"]
@@ -243,6 +249,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "addArrangedSubview"]
 - !private ["s23CustomStringConvertibleP", "addSubview"]
 - ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
 - ["s23CustomStringConvertibleP", "attributedText"]
 - ["s23CustomStringConvertibleP", "backgroundColor"]
 - ["s23CustomStringConvertibleP", "blue"]
@@ -267,6 +275,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "leadingAnchor"]
 - !private ["s23CustomStringConvertibleP", "nextButton"]
 - ["s23CustomStringConvertibleP", "numberOfPages"]
+- !private ["s23CustomStringConvertibleP", "page"]
 - !private ["s23CustomStringConvertibleP", "pageControl"]
 - ["s23CustomStringConvertibleP", "pageIndicatorTintColor"]
 - !private ["s23CustomStringConvertibleP", "previousButton"]
@@ -284,6 +293,8 @@ depends-member:
 - ["s23CustomStringConvertibleP", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["s23CustomStringConvertibleP", "white"]
 - !private ["s23CustomStringConvertibleP", "widthAnchor"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
 - ["So23UIStackViewDistributionV", "fillEqually"]
 - !private ["SQ", "Key"]
 - ["SQ", "NSAttributedString"]
@@ -331,6 +342,7 @@ depends-member:
 - !private ["SQ", "nextButton"]
 - ["SQ", "normal"]
 - ["SQ", "numberOfPages"]
+- !private ["SQ", "page"]
 - !private ["SQ", "pageControl"]
 - ["SQ", "pageIndicatorTintColor"]
 - !private ["SQ", "previousButton"]
@@ -395,6 +407,7 @@ depends-member:
 - !private ["SH", "leadingAnchor"]
 - !private ["SH", "nextButton"]
 - ["SH", "numberOfPages"]
+- !private ["SH", "page"]
 - !private ["SH", "pageControl"]
 - ["SH", "pageIndicatorTintColor"]
 - !private ["SH", "previousButton"]
@@ -456,6 +469,7 @@ depends-member:
 - !private ["So8NSCodingP", "leadingAnchor"]
 - !private ["So8NSCodingP", "nextButton"]
 - ["So8NSCodingP", "numberOfPages"]
+- !private ["So8NSCodingP", "page"]
 - !private ["So8NSCodingP", "pageControl"]
 - ["So8NSCodingP", "pageIndicatorTintColor"]
 - !private ["So8NSCodingP", "previousButton"]
@@ -513,6 +527,7 @@ depends-member:
 - ["So8NSObjectC", "NSCoder"]
 - !private ["So8NSObjectC", "NSLayoutConstraint"]
 - ["So8NSObjectC", "NSMutableAttributedString"]
+- ["So8NSObjectC", "Page"]
 - ["So8NSObjectC", "UIButton"]
 - ["So8NSObjectC", "UIColor"]
 - ["So8NSObjectC", "UIFont"]
@@ -550,6 +565,7 @@ depends-member:
 - !private ["So8NSObjectC", "leadingAnchor"]
 - ["So8NSObjectC", "nextButton"]
 - ["So8NSObjectC", "numberOfPages"]
+- ["So8NSObjectC", "page"]
 - ["So8NSObjectC", "pageControl"]
 - ["So8NSObjectC", "pageIndicatorTintColor"]
 - ["So8NSObjectC", "previousButton"]
@@ -609,6 +625,7 @@ depends-member:
 - !private ["So8NSObjectP", "leadingAnchor"]
 - !private ["So8NSObjectP", "nextButton"]
 - ["So8NSObjectP", "numberOfPages"]
+- !private ["So8NSObjectP", "page"]
 - !private ["So8NSObjectP", "pageControl"]
 - ["So8NSObjectP", "pageIndicatorTintColor"]
 - !private ["So8NSObjectP", "previousButton"]
@@ -635,6 +652,9 @@ depends-member:
 - !private ["So14NSSecureCodingP", "white"]
 - ["So15NSTextAlignmentV", "center"]
 - ["s9OptionSetP", "normal"]
+- !private ["16ProgrammaticUI_34PageV", "description"]
+- !private ["16ProgrammaticUI_34PageV", "headerText"]
+- !private ["16ProgrammaticUI_34PageV", "imageName"]
 - ["SY", "center"]
 - ["SY", "fillEqually"]
 - ["SY", "font"]
@@ -642,6 +662,10 @@ depends-member:
 - ["SY", "system"]
 - ["s10SetAlgebraP", "normal"]
 - ["So14UIControlStateV", "normal"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "bottomAnchor"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "centerXAnchor"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "centerYAnchor"]
@@ -686,6 +710,7 @@ depends-member:
 - !private ["So29UIAccessibilityIdentificationP", "leadingAnchor"]
 - !private ["So29UIAccessibilityIdentificationP", "nextButton"]
 - ["So29UIAccessibilityIdentificationP", "numberOfPages"]
+- !private ["So29UIAccessibilityIdentificationP", "page"]
 - !private ["So29UIAccessibilityIdentificationP", "pageControl"]
 - ["So29UIAccessibilityIdentificationP", "pageIndicatorTintColor"]
 - !private ["So29UIAccessibilityIdentificationP", "previousButton"]
@@ -734,6 +759,7 @@ depends-member:
 - !private ["So12UIAppearanceP", "leadingAnchor"]
 - !private ["So12UIAppearanceP", "nextButton"]
 - ["So12UIAppearanceP", "numberOfPages"]
+- !private ["So12UIAppearanceP", "page"]
 - !private ["So12UIAppearanceP", "pageControl"]
 - ["So12UIAppearanceP", "pageIndicatorTintColor"]
 - !private ["So12UIAppearanceP", "previousButton"]
@@ -782,6 +808,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "leadingAnchor"]
 - !private ["So21UIAppearanceContainerP", "nextButton"]
 - ["So21UIAppearanceContainerP", "numberOfPages"]
+- !private ["So21UIAppearanceContainerP", "page"]
 - !private ["So21UIAppearanceContainerP", "pageControl"]
 - ["So21UIAppearanceContainerP", "pageIndicatorTintColor"]
 - !private ["So21UIAppearanceContainerP", "previousButton"]
@@ -805,6 +832,7 @@ depends-member:
 - ["So24UICollectionReusableViewC", "NSCoder"]
 - !private ["So24UICollectionReusableViewC", "NSLayoutConstraint"]
 - ["So24UICollectionReusableViewC", "NSMutableAttributedString"]
+- ["So24UICollectionReusableViewC", "Page"]
 - ["So24UICollectionReusableViewC", "UIButton"]
 - ["So24UICollectionReusableViewC", "UIColor"]
 - ["So24UICollectionReusableViewC", "UIFont"]
@@ -821,6 +849,7 @@ depends-member:
 - !private ["So24UICollectionReusableViewC", "fatalError"]
 - ["So24UICollectionReusableViewC", "init"]
 - ["So24UICollectionReusableViewC", "nextButton"]
+- ["So24UICollectionReusableViewC", "page"]
 - ["So24UICollectionReusableViewC", "pageControl"]
 - ["So24UICollectionReusableViewC", "previousButton"]
 - !private ["So24UICollectionReusableViewC", "safeAreaLayoutGuide"]
@@ -832,6 +861,7 @@ depends-member:
 - ["So20UICollectionViewCellC", "NSCoder"]
 - !private ["So20UICollectionViewCellC", "NSLayoutConstraint"]
 - ["So20UICollectionViewCellC", "NSMutableAttributedString"]
+- ["So20UICollectionViewCellC", "Page"]
 - ["So20UICollectionViewCellC", "UIButton"]
 - ["So20UICollectionViewCellC", "UIColor"]
 - ["So20UICollectionViewCellC", "UIFont"]
@@ -849,6 +879,7 @@ depends-member:
 - !private ["So20UICollectionViewCellC", "fatalError"]
 - ["So20UICollectionViewCellC", "init"]
 - ["So20UICollectionViewCellC", "nextButton"]
+- ["So20UICollectionViewCellC", "page"]
 - ["So20UICollectionViewCellC", "pageControl"]
 - ["So20UICollectionViewCellC", "previousButton"]
 - !private ["So20UICollectionViewCellC", "safeAreaLayoutGuide"]
@@ -911,6 +942,7 @@ depends-member:
 - !private ["So17UICoordinateSpaceP", "leadingAnchor"]
 - !private ["So17UICoordinateSpaceP", "nextButton"]
 - ["So17UICoordinateSpaceP", "numberOfPages"]
+- !private ["So17UICoordinateSpaceP", "page"]
 - !private ["So17UICoordinateSpaceP", "pageControl"]
 - ["So17UICoordinateSpaceP", "pageIndicatorTintColor"]
 - !private ["So17UICoordinateSpaceP", "previousButton"]
@@ -959,6 +991,7 @@ depends-member:
 - !private ["So13UIDynamicItemP", "leadingAnchor"]
 - !private ["So13UIDynamicItemP", "nextButton"]
 - ["So13UIDynamicItemP", "numberOfPages"]
+- !private ["So13UIDynamicItemP", "page"]
 - !private ["So13UIDynamicItemP", "pageControl"]
 - ["So13UIDynamicItemP", "pageIndicatorTintColor"]
 - !private ["So13UIDynamicItemP", "previousButton"]
@@ -1007,6 +1040,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "leadingAnchor"]
 - !private ["So18UIFocusEnvironmentP", "nextButton"]
 - ["So18UIFocusEnvironmentP", "numberOfPages"]
+- !private ["So18UIFocusEnvironmentP", "page"]
 - !private ["So18UIFocusEnvironmentP", "pageControl"]
 - ["So18UIFocusEnvironmentP", "pageIndicatorTintColor"]
 - !private ["So18UIFocusEnvironmentP", "previousButton"]
@@ -1055,6 +1089,7 @@ depends-member:
 - !private ["So11UIFocusItemP", "leadingAnchor"]
 - !private ["So11UIFocusItemP", "nextButton"]
 - ["So11UIFocusItemP", "numberOfPages"]
+- !private ["So11UIFocusItemP", "page"]
 - !private ["So11UIFocusItemP", "pageControl"]
 - ["So11UIFocusItemP", "pageIndicatorTintColor"]
 - !private ["So11UIFocusItemP", "previousButton"]
@@ -1103,6 +1138,7 @@ depends-member:
 - !private ["So20UIFocusItemContainerP", "leadingAnchor"]
 - !private ["So20UIFocusItemContainerP", "nextButton"]
 - ["So20UIFocusItemContainerP", "numberOfPages"]
+- !private ["So20UIFocusItemContainerP", "page"]
 - !private ["So20UIFocusItemContainerP", "pageControl"]
 - ["So20UIFocusItemContainerP", "pageIndicatorTintColor"]
 - !private ["So20UIFocusItemContainerP", "previousButton"]
@@ -1183,6 +1219,7 @@ depends-member:
 - !private ["So24UILargeContentViewerItemP", "leadingAnchor"]
 - !private ["So24UILargeContentViewerItemP", "nextButton"]
 - ["So24UILargeContentViewerItemP", "numberOfPages"]
+- !private ["So24UILargeContentViewerItemP", "page"]
 - !private ["So24UILargeContentViewerItemP", "pageControl"]
 - ["So24UILargeContentViewerItemP", "pageIndicatorTintColor"]
 - !private ["So24UILargeContentViewerItemP", "previousButton"]
@@ -1241,6 +1278,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "leadingAnchor"]
 - !private ["So30UIPasteConfigurationSupportingP", "nextButton"]
 - ["So30UIPasteConfigurationSupportingP", "numberOfPages"]
+- !private ["So30UIPasteConfigurationSupportingP", "page"]
 - !private ["So30UIPasteConfigurationSupportingP", "pageControl"]
 - ["So30UIPasteConfigurationSupportingP", "pageIndicatorTintColor"]
 - !private ["So30UIPasteConfigurationSupportingP", "previousButton"]
@@ -1260,6 +1298,7 @@ depends-member:
 - ["So11UIResponderC", "NSCoder"]
 - !private ["So11UIResponderC", "NSLayoutConstraint"]
 - ["So11UIResponderC", "NSMutableAttributedString"]
+- ["So11UIResponderC", "Page"]
 - ["So11UIResponderC", "UIButton"]
 - ["So11UIResponderC", "UIColor"]
 - ["So11UIResponderC", "UIFont"]
@@ -1290,6 +1329,7 @@ depends-member:
 - !private ["So11UIResponderC", "leadingAnchor"]
 - ["So11UIResponderC", "nextButton"]
 - ["So11UIResponderC", "numberOfPages"]
+- ["So11UIResponderC", "page"]
 - ["So11UIResponderC", "pageControl"]
 - ["So11UIResponderC", "pageIndicatorTintColor"]
 - ["So11UIResponderC", "previousButton"]
@@ -1338,6 +1378,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "leadingAnchor"]
 - !private ["So30UIResponderStandardEditActionsP", "nextButton"]
 - ["So30UIResponderStandardEditActionsP", "numberOfPages"]
+- !private ["So30UIResponderStandardEditActionsP", "page"]
 - !private ["So30UIResponderStandardEditActionsP", "pageControl"]
 - ["So30UIResponderStandardEditActionsP", "pageIndicatorTintColor"]
 - !private ["So30UIResponderStandardEditActionsP", "previousButton"]
@@ -1469,6 +1510,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "leadingAnchor"]
 - !private ["So18UITraitEnvironmentP", "nextButton"]
 - ["So18UITraitEnvironmentP", "numberOfPages"]
+- !private ["So18UITraitEnvironmentP", "page"]
 - !private ["So18UITraitEnvironmentP", "pageControl"]
 - ["So18UITraitEnvironmentP", "pageIndicatorTintColor"]
 - !private ["So18UITraitEnvironmentP", "previousButton"]
@@ -1517,6 +1559,7 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "leadingAnchor"]
 - !private ["So23UIUserActivityRestoringP", "nextButton"]
 - ["So23UIUserActivityRestoringP", "numberOfPages"]
+- !private ["So23UIUserActivityRestoringP", "page"]
 - !private ["So23UIUserActivityRestoringP", "pageControl"]
 - ["So23UIUserActivityRestoringP", "pageIndicatorTintColor"]
 - !private ["So23UIUserActivityRestoringP", "previousButton"]
@@ -1536,6 +1579,7 @@ depends-member:
 - ["So6UIViewC", "NSCoder"]
 - !private ["So6UIViewC", "NSLayoutConstraint"]
 - ["So6UIViewC", "NSMutableAttributedString"]
+- ["So6UIViewC", "Page"]
 - ["So6UIViewC", "UIButton"]
 - ["So6UIViewC", "UIColor"]
 - ["So6UIViewC", "UIFont"]
@@ -1566,6 +1610,7 @@ depends-member:
 - !private ["So6UIViewC", "leadingAnchor"]
 - ["So6UIViewC", "nextButton"]
 - ["So6UIViewC", "numberOfPages"]
+- ["So6UIViewC", "page"]
 - ["So6UIViewC", "pageControl"]
 - ["So6UIViewC", "pageIndicatorTintColor"]
 - ["So6UIViewC", "previousButton"]
@@ -1628,6 +1673,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "leadingAnchor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "nextButton"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "numberOfPages"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "page"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "pageControl"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "pageIndicatorTintColor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "previousButton"]
@@ -1687,6 +1733,7 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "leadingAnchor"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "nextButton"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "numberOfPages"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "page"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "pageControl"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "pageIndicatorTintColor"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "previousButton"]
@@ -1740,6 +1787,7 @@ depends-member:
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "leadingAnchor"]
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "nextButton"]
 - ["s38__DefaultCustomPlaygroundQuickLookableP", "numberOfPages"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "page"]
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "pageControl"]
 - ["s38__DefaultCustomPlaygroundQuickLookableP", "pageIndicatorTintColor"]
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "previousButton"]
@@ -1761,6 +1809,7 @@ depends-nominal:
 - "s7CVarArgP"
 - "s28CustomDebugStringConvertibleP"
 - "s23CustomStringConvertibleP"
+- !private "s26DefaultStringInterpolationV"
 - "So23UIStackViewDistributionV"
 - "SQ"
 - "s25ExpressibleByArrayLiteralP"
@@ -1783,9 +1832,12 @@ depends-nominal:
 - "So14NSSecureCodingP"
 - "So15NSTextAlignmentV"
 - "s9OptionSetP"
+- !private "16ProgrammaticUI_34PageV"
 - "SY"
 - "s10SetAlgebraP"
 - "So14UIControlStateV"
+- !private "s27StringInterpolationProtocolP"
+- !private "s16TextOutputStreamP"
 - "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
 - "So29UIAccessibilityIdentificationP"
 - "So12UIAppearanceP"
@@ -3043,4 +3095,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "8ba7ca2d584aaea5a40c14e51590d50c"
+interface-hash: "bf421d08332d0eec140b80667dde183d"

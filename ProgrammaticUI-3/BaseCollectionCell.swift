@@ -10,27 +10,16 @@ import UIKit
 
 class BaseCollectionCell: UICollectionViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-//        self.backgroundColor = UIColor.blue
-        
-        //
-        
-        backgroundColor = UIColor.white
-        addSubview(topContainerView)
-        addSubview(descriptionTextView)
-        addSubview(bottomStackView)
-        bottomStackView.addArrangedSubview(previousButton)
-        bottomStackView.addArrangedSubview(pageControl)
-        bottomStackView.addArrangedSubview(nextButton)
-        setupUI()
+    var page: Page? {
+        didSet {
+            guard let unwrappedPage = page else { return}
+            topImageView.image = UIImage(named: unwrappedPage.imageName)
+            let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18.0)])
+            attributedText.append(NSAttributedString(string: "\n\n\n\(unwrappedPage.description)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13.0)]))
+            descriptionTextView.attributedText = attributedText
+            descriptionTextView.textAlignment = .center
+        }
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    //new
     
     let topImageView: UIImageView = {
         let myImageView = UIImageView()
@@ -89,20 +78,23 @@ class BaseCollectionCell: UICollectionViewCell {
         pageControl.pageIndicatorTintColor = UIColor.gray
         return pageControl
     }()
-
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view.
-//        view.backgroundColor = UIColor.white
-//        view.addSubview(topContainerView)
-//        view.addSubview(descriptionTextView)
-//        view.addSubview(bottomStackView)
-//        bottomStackView.addArrangedSubview(previousButton)
-//        bottomStackView.addArrangedSubview(pageControl)
-//        bottomStackView.addArrangedSubview(nextButton)
-//        setupUI()
-//
-//    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = UIColor.white
+        addSubview(topContainerView)
+        addSubview(descriptionTextView)
+        addSubview(bottomStackView)
+        bottomStackView.addArrangedSubview(previousButton)
+        bottomStackView.addArrangedSubview(pageControl)
+        bottomStackView.addArrangedSubview(nextButton)
+        setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     private func setupUI(){
         
