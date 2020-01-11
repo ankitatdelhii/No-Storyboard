@@ -222,6 +222,7 @@ SWIFT_CLASS("_TtC16ProgrammaticUI_318BaseCollectionCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@protocol UIViewControllerTransitionCoordinator;
 @class UIScrollView;
 @class UICollectionView;
 @class UICollectionViewLayout;
@@ -230,6 +231,7 @@ SWIFT_CLASS("_TtC16ProgrammaticUI_318BaseCollectionCell")
 SWIFT_CLASS("_TtC16ProgrammaticUI_318BaseCollectionPage")
 @interface BaseCollectionPage : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 - (void)viewDidLoad;
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 - (void)nextBtnPressed;
 - (void)prevBtnPressed;
 - (void)scrollViewWillEndDragging:(UIScrollView * _Nonnull)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(CGPoint * _Nonnull)targetContentOffset;

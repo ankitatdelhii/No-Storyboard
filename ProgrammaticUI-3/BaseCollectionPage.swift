@@ -74,6 +74,15 @@ class BaseCollectionPage: UIViewController, UICollectionViewDataSource, UICollec
         previousButton.addTarget(self, action: #selector(prevBtnPressed), for: .touchUpInside)
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animateAlongsideTransition(in: view, animation: { _ in
+            self.mainCollection.collectionViewLayout.invalidateLayout()
+            let index = IndexPath(item: self.pageControl.currentPage, section: 0)
+            self.mainCollection.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        }, completion: nil)
+        
+    }
+    
     @objc func nextBtnPressed() {
         let nextIndex = pageControl.currentPage + 1
         if nextIndex < pages.count {
